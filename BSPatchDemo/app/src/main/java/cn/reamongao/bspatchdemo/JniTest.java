@@ -5,9 +5,9 @@ package cn.reamongao.bspatchdemo;
  */
 
 public class JniTest {
-    public static native String accessMethod();
-
-    static {
-        System.loadLibrary("jni_test");
-    }
+//    public static native String accessMethod();
+//
+//    static {
+//        System.loadLibrary("jni_test");
+//    }
 }

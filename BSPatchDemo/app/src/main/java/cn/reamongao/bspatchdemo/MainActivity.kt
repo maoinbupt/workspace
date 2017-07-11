@@ -14,7 +14,8 @@ class MainActivity : AppCompatActivity() {
         // Example of a call to a native method
         val tv = findViewById(R.id.sample_text) as TextView
 //        tv.text = stringFromJNI()
-        val str = JniTest.accessMethod()
+//        val str = JniTest.accessMethod()
+        val str = BSPatch.bspatch("oldfile1","newFile","patchfile")
         tv.text = str
     }
 

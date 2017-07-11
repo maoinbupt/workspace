@@ -11,13 +11,31 @@ cmake_minimum_required(VERSION 3.4.1)
 # Gradle automatically packages shared libraries with your APK.
 
 add_library( # Sets the name of the library.
-             jni_test
+             bspatcher
 
              # Sets the library as a shared library.
              SHARED
 
              # Provides a relative path to your source file(s).
-             src/main/jni/JniTest.c )
+             src/main/jni/bspatcher.c
+             src/main/jni/blocksort.c
+             src/main/jni/bsdiff.c
+             src/main/jni/bspatch.c
+             src/main/jni/bzip2.c
+             src/main/jni/bzip2recover.c
+             src/main/jni/bzlib.c
+             src/main/jni/bzlib.h
+             src/main/jni/bzlib_private.h
+             src/main/jni/compress.c
+             src/main/jni/crctable.c
+             src/main/jni/decompress.c
+             src/main/jni/dlltest.c
+             src/main/jni/huffman.c
+             src/main/jni/mk251.c
+             src/main/jni/randtable.c
+             src/main/jni/spewG.c
+             src/main/jni/unzcrash.c
+             )
 
 # Searches for a specified prebuilt library and stores the path as a
 # variable. Because CMake includes system libraries in the search path by
@@ -37,7 +55,7 @@ find_library( # Sets the name of the path variable.
 # build script, prebuilt third-party libraries, or system libraries.
 
 target_link_libraries( # Specifies the target library.
-                       jni_test
+                       bspatcher
 
                        # Links the target library to the log library
                        # included in the NDK.
