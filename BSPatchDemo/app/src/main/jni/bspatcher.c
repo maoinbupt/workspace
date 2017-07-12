@@ -1,7 +1,17 @@
 #include <jni.h>
-#include <string.h>
+#include "bspatch.c"
 
-jstring Java_cn_reamongao_bspatchdemo_BSPatch_bspatch(JNIEnv *env, jobject thiz, jstring oldfile, jstring newfile, jstring patchfile) {
 
-    return (*env)->NewStringUTF(env, "Hello From bspatcher.c");
+int Java_cn_reamongao_bspatchdemo_BSPatch_bspatch(JNIEnv *env, jobject thiz, jstring oldfile, jstring newfile, jstring patchfile) {
+
+    int number = 4;
+    char *pathfile[] = {
+                    "GAOFENG===",
+                    oldfile,
+                    newfile,
+                    patchfile,
+                };
+
+
+    return bspatch(number, pathfile);
 }
