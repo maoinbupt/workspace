@@ -5,9 +5,11 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Locale;
 
 /**
  * Created by GaoFeng on 2017.07.11.
@@ -49,11 +51,18 @@ public class MessageAsapter extends RecyclerView.Adapter<MessqgeHolder> implemen
     }
 
     @Override
-    public void onBindViewHolder(MessqgeHolder holder, int position) {
-        MessageBean messageBean = dataList.get(position);
+    public void onBindViewHolder(MessqgeHolder holder, final int position) {
+        final MessageBean messageBean = dataList.get(position);
         holder.tvTitle.setText(messageBean.getTitle());
         holder.tvContent.setText(messageBean.getContent());
         holder.ivIcon.setImageResource(messageBean.getPicId());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(context,String.format(Locale.getDefault(),"点击了第 %d 个,标题为 %s",position,messageBean.getTitle()),Toast.LENGTH_SHORT).show();
+            }
+        });
 
     }
 

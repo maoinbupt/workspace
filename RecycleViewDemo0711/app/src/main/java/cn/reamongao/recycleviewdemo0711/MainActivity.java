@@ -31,12 +31,10 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setAdapter(adapter);
 
-        // recycleview
-        // adapter
-        // dataList
-//        callback = new MessageItemTouchCallback(adapter);
-//        itemTouchHelper = new ItemTouchHelper(callback);
-//        itemTouchHelper.attachToRecyclerView(recyclerView);
+        callback = new MessageItemTouchCallback(adapter);
+        // 手势Helper
+        itemTouchHelper = new ItemTouchHelper(callback);
+        itemTouchHelper.attachToRecyclerView(recyclerView);
 
 
     }
