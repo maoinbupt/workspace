@@ -17,10 +17,9 @@ add_library( # Sets the name of the library.
              SHARED
 
              # Provides a relative path to your source file(s).
-             src/main/jni/bspatcher.c
+             src/main/jni/bspatch.c
              src/main/jni/blocksort.c
              src/main/jni/bsdiff.c
-             src/main/jni/bspatch.c
              src/main/jni/bzip2.c
              src/main/jni/bzip2recover.c
              src/main/jni/bzlib.c

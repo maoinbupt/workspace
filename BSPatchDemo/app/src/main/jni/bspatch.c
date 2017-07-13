@@ -27,7 +27,7 @@
 #if 0
 __FBSDID("$FreeBSD: src/usr.bin/bsdiff/bspatch/bspatch.c,v 1.1 2005/08/06 01:59:06 cperciva Exp $");
 #endif
-
+#include <jni.h>
 #include "bzlib.h"
 #include <stdlib.h>
 #include <stdio.h>
@@ -201,4 +201,29 @@ int bspatch(int argc,char * argv[])
 	free(old);
 
 	return 0;
+}
+
+
+JNIEXPORT jint Java_cn_reamongao_bspatchdemo_BSPatch_bspatcher(JNIEnv *env,  jclass type, jstring oldfile, jstring newfile, jstring patchfile) {
+
+const char *oldApkPath = (*env)->GetStringUTFChars(env, oldfile, 0);
+const char *newApkPath = (*env)->GetStringUTFChars(env, newfile, 0);
+const char *patchPath = (*env)->GetStringUTFChars(env, patchfile, 0);
+
+int argc = 4;
+char* argv[4];
+argv[0] = "bspatch";
+argv[1] = oldApkPath;
+argv[2] = newApkPath;
+argv[3] = patchPath;
+
+
+
+int ret =  bspatch(argc, argv);
+(*env)->ReleaseStringUTFChars(env, oldfile, oldApkPath);
+(*env)->ReleaseStringUTFChars(env, newfile, newApkPath);
+(*env)->ReleaseStringUTFChars(env, patchfile, patchPath);
+
+return ret;
+
 }

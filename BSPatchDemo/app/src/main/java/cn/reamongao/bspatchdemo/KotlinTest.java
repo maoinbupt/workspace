@@ -7,7 +7,12 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Environment;
 
+import java.io.BufferedOutputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 
 /**
  * Created by GaoFeng on 2017.07.11.
@@ -26,7 +31,6 @@ public class KotlinTest extends Activity{
 
         }
 
-        File file = new File("path");
 
 
         return 0;
@@ -37,6 +41,25 @@ public class KotlinTest extends Activity{
             return Environment.getExternalStorageDirectory().getPath();
         }
         return "";
+    }
+
+    /**
+     * 从输入流中获取字节数组
+     * @param inputStream
+     * @return
+     * @throws IOException
+     */
+    public static  byte[] readInputStream(InputStream inputStream) throws IOException {
+        byte[] buffer = new byte[1024];
+        int len = 0;
+        ByteArrayOutputStream bos = new ByteArrayOutputStream();
+        while((len = inputStream.read(buffer)) != -1) {
+            bos.write(buffer, 0, len);
+        }
+        bos.close();
+        return bos.toByteArray();
+
+
     }
 
 }

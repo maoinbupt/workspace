@@ -6,7 +6,7 @@ package cn.reamongao.bspatchdemo;
 
 public class BSPatch {
 
-    public static native int bspatch(String oldfile, String newfile, String patchfile);
+    public static native int bspatcher(String oldfile, String newfile, String patchfile);
 
     static {
         System.loadLibrary("bspatcher");
