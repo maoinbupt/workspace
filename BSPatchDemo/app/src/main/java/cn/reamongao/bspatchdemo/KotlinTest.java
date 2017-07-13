@@ -17,7 +17,7 @@ import java.io.InputStream;
 /**
  * Created by GaoFeng on 2017.07.11.
  */
-
+@Deprecated
 public class KotlinTest extends Activity{
 
     String packageName = "cn.reamongao.bspatchdemo";
