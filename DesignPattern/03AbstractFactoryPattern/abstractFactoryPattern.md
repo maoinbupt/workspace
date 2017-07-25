@@ -26,7 +26,7 @@
  ![UML](https://upload.wikimedia.org/wikipedia/commons/9/9d/Abstract_factory_UML.svg "UML图")
 
 ### 代码分析 ###
-![UML](http://git.d.sohu.com/android/sohuvideo_gradle/raw/master/sohuVideoMobile/src/main/res/drawable-xhdpi/copyright_logo.png "UML图")
+见根目录
 
 ### 模式分析 ###
 
